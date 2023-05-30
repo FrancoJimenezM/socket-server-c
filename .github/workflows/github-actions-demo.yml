@@ -25,3 +25,4 @@ jobs:
         run: |
           sleep 5 # Esperar 5 segundos para asegurar que el servidor se inicie correctamente
           ./cliente 4 0.0.0.0
+          pkill -f ./servidor # Finalizar el proceso del servidor
