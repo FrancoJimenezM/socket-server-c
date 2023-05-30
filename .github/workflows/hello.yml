@@ -1,0 +1,19 @@
+name: Say hello
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+
+# Cuando se ejecuta?
+on: 
+  push:
+    branches:
+      - master
+
+# Trabajos por hacer
+jobs: 
+  #nombre
+  hello_world:
+    # sistema operativo
+    runs-on: windows-latest
+    steps: 
+      - name: Echo the message
+        run: | 
+          echo "Holaa"
