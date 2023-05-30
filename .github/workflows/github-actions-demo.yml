@@ -2,7 +2,7 @@ name: GitHub Actions Demo
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: 
   push:
-    branches-ignore: [ ]
+    branches-ignore: []
 
 jobs:
   build-and-run:
@@ -17,7 +17,11 @@ jobs:
         run: make
 
       - name: Start server
-        run: ./servidor
+        run: |
+          make
+          ./servidor &
 
       - name: Run client
-        run: ./cliente 4
+        run: |
+          sleep 5 # Esperar 5 segundos para asegurar que el servidor se inicie correctamente
+          ./cliente 4 0.0.0.0
